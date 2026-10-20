@@ -14,34 +14,32 @@
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 
         <style>
-/* ==========================================================
-   Design tokens
-       ========================================================== */
-:root {
-    /* Color palette (taken from the Figma design).
-       The logo (logo.svg) keeps its own #00f. */
-    --color-ink: #111827;
-    --color-ink-muted: #6e7585;
-    --color-border: #a6aec0;
-    --color-tint: #f1f3f7;
-    --color-surface: #fff;
+        /* ==========================================================
+           Design tokens
+           ========================================================== */
+        :root {
+            --color-ink: #111827;
+            --color-ink-muted: #6e7585;
+            --color-border: #a6aec0;
+            --color-tint: #f1f3f7;
+            --color-surface: #fff;
 
-    --font-base: "Zen Kaku Gothic New", sans-serif;
-    --font-display: "Bricolage Grotesque", "Zen Kaku Gothic New", sans-serif;
+            --font-base: "Zen Kaku Gothic New", sans-serif;
+            --font-display: "Bricolage Grotesque", "Zen Kaku Gothic New", sans-serif;
 
-    --content-max-width: 52rem;
-    --page-gutter: 1rem;
-    --section-gap-large: 3rem;
+            --content-max-width: 52rem;
+            --page-gutter: 1rem;
+            --section-gap-large: 3rem;
 
-    /* Font sizes: mobile values */
-    --font-size-lead: 0.8125rem;
-    --font-size-small: 0.8125rem;
-    --font-size-name: 0.875rem;
-    --font-size-price: 1.25rem;
-    --font-size-heading: 1.5rem;
-}
+            /* Font sizes: mobile values */
+            --font-size-lead: 0.8125rem;
+            --font-size-small: 0.8125rem;
+            --font-size-name: 0.875rem;
+            --font-size-price: 1.25rem;
+            --font-size-heading: 1.5rem;
+        }
 
-        /* Font sizes: standard sizes for larger screens */
+        /* Font sizes: larger screens */
         @media (min-width: 48rem) {
             :root {
                 --font-size-lead: 1rem;
@@ -54,7 +52,7 @@
 
         /* ==========================================================
            Base
-               ========================================================== */
+           ========================================================== */
         body {
             margin: 0;
             font-family: var(--font-base);
@@ -127,7 +125,7 @@
 
         /* ==========================================================
            Menu
-               ========================================================== */
+           ========================================================== */
         .menu {
             box-sizing: border-box;
             max-width: var(--content-max-width);
@@ -151,7 +149,7 @@
         }
 
         .price-group + .price-group {
-            margin-top: 2rem;
+            margin-top: 4rem;
         }
 
         .price-group h3 {
@@ -223,6 +221,39 @@
         @media (min-width: 48rem) {
             .price-group ul {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* ==========================================================
+           Footer (links to roasters)
+           ========================================================== */
+        .site-footer {
+            margin-top: 4rem;
+            padding: 1rem var(--page-gutter) 3rem var(--page-gutter);
+            font-size: var(--font-size-small);
+            text-align: center;
+            background-color: var(--color-tint);
+        }
+
+        /* Mobile: one link per line */
+        .site-footer ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem 2rem;
+        }
+
+        .site-footer a {
+            color: inherit;
+            text-underline-offset: 0.25em;
+        }
+
+        /* Tablet and up: links in a row (wrap if needed) */
+        @media (min-width: 48rem) {
+            .site-footer ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
         </style>
@@ -307,5 +338,15 @@
                 </section>
             </section>
         </main>
+
+        <footer class="site-footer">
+            <h3>=== Special Thanks ===</h3>
+            <ul>
+                <li><a href="https://www.sotcoffee.com" target="_blank" rel="noopener noreferrer">SÖT COFFEE</a></li>
+                <li><a href="https://www.instagram.com/restart_coffee_roaster/" target="_blank" rel="noopener noreferrer">RESTART COFFEE ROASTER (Instagram)</a></li>
+                <li><a href="https://www.instagram.com/tadaima_coffee/" target="_blank" rel="noopener noreferrer">ただいまコーヒー (Instagram)</a></li>
+                <li><a href="http://www.coffee-senka.com" target="_blank" rel="noopener noreferrer">コーヒー専科 Beans</a></li>
+            </ul>
+        </footer>
     </body>
 </html>
