@@ -37,7 +37,7 @@
 /* ----- Switch: remove the comment marks to mark as sold out ----- */
 
 /* ¥400 */
-#coffee-400-1 { --sold-out: block; }
+/* #coffee-400-1 { --sold-out: block; } */
 /* #coffee-400-2 { --sold-out: block; } */
 
 /* ¥300 */
