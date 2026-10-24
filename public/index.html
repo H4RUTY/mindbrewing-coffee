@@ -13,8 +13,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="./css/styles.css">
-        <link rel="stylesheet" href="./css/sold-out.css?v=2">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header class="site-header">
@@ -30,80 +29,64 @@
 
         <main>
             <section class="menu" aria-labelledby="menu-title">
-                <h2 id="menu-title">Menu</h2>
-
-                <!-- ¥400 -->
-                <section class="price-group" aria-labelledby="price-400">
-                    <h3 id="price-400">¥400</h3>
-                    <ul>
-                        <li class="coffee-card" id="coffee-400-1">
-                            <p class="coffee-card__roaster">SÖT COFFEE</p>
-                            <img src="./images/400_1.png" width="56" height="56" alt="">
-                            <h4>コロンビア アルト デ ラス エストレージャス<br>アナエロビック ナチュラル</h4>
-                            <p lang="en">Colombia Alto de Las Estrellas Anaerobic Natural</p>
-                            <p>ラズベリー・パッションフルーツ・レモンキャンディ</p>
-                        </li>
-                        <li class="coffee-card" id="coffee-400-2">
-                            <p class="coffee-card__roaster">RESTART COFFEE ROASTER</p>
-                            <img src="./images/400_2.png" width="56" height="56" alt="">
-                            <h4>コロンビア フィンカ ラ プリマベーラ パパジョ<br>ナチュラルアナエロビック</h4>
-                            <p lang="en">Colombia Finca La Primavera Papayo Natural Anarobic</p>
-                            <p>シナモン・プラム・梅酒</p>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- ¥300 -->
-                <section class="price-group" aria-labelledby="price-300">
-                    <h3 id="price-300">¥300</h3>
-                    <ul>
-                        <li class="coffee-card" id="coffee-300-1">
-                            <p class="coffee-card__roaster">RESTART COFFEE ROASTER</p>
-                            <img src="./images/300_1.png" width="56" height="56" alt="">
-                            <h4>グアテマラ アンティグア<br>ラ・フォリー農園 フリーウォッシュド</h4>
-                            <p lang="en">Guatemala Antigua Finca La Folia Fully Washed</p>
-                            <p>柑橘系・りんご</p>
-                        </li>
-                        <li class="coffee-card" id="coffee-300-2">
-                            <p class="coffee-card__roaster">ただいまコーヒー</p>
-                            <img src="./images/300_2.png" width="56" height="56" alt="">
-                            <h4>プリンセサ ドミニカ ワイニーナチュラル</h4>
-                            <p lang="en">Dominica Princesa Winey Natural</p>
-                            <p>プラム・赤ワイン</p>
-                        </li>
-                    </ul>
-                </section>
-
-                <!-- ¥200 -->
-                <section class="price-group" aria-labelledby="price-200">
-                    <h3 id="price-200">¥200</h3>
-                    <ul>
-                        <li class="coffee-card" id="coffee-200-1">
-                            <p class="coffee-card__roaster">コーヒー専科 Beans</p>
-                            <img src="./images/200_1.png" width="56" height="56" alt="">
-                            <h4>コスタリカ ジャガーハニー</h4>
-                            <p lang="en">Costa Rica Jaguar Honey</p>
-                            <p>ピーチ・ナッツ・ミルクチョコレート</p>
-                        </li>
-                        <li class="coffee-card" id="coffee-200-2">
-                            <p class="coffee-card__roaster">コーヒー専科 Beans</p>
-                            <img src="./images/200_2.png" width="56" height="56" alt="">
-                            <h4>ブラジル ハニー</h4>
-                            <p lang="en">Brazil Honey</p>
-                            <p>カカオ・アーモンド</p>
-                        </li>
-                    </ul>
-                </section>
+                <ul>
+                    <li class="coffee-card" id="coffee-ethiopia">
+                        <p class="coffee-card__origin">Ethiopia</p>
+                        <img src="./images/ethiopia.png" width="120" height="120" alt="">
+                        <h4>エチオピア ゴゴグ ウォッシュト</h4>
+                        <p lang="en">Ethiopia Gogogu Washed</p>
+                        <p>
+                        シトラス系や白ブドウのような爽やかな酸味<br>
+                        サトウキビのような甘い余韻が続いていく<br>
+                        エチオピアらしい繊細さと透明感が楽しめる
+                        </p>
+                        <p class="coffee-card__roast" lang="en">Cinnamon Roast（浅煎り）</p>
+                    </li>
+                    <li class="coffee-card" id="coffee-panama">
+                        <p class="coffee-card__origin">Panama</p>
+                        <img src="./images/panama.png" width="120" height="120" alt="">
+                        <h4>パナマ ラ エスメラルダ ダイヤモンドマウンテン<br>カトゥアイ フリーウォッシュド</h4>
+                        <p lang="en">Panama La Esmeralda Diamond Mountain Catuai Fully Washed</p>
+                        <p>
+                        紅茶のような上品さと蜂蜜の円やかな甘さ<br>
+                        シトラス系の爽やかで軽やかな風味と<br>
+                        林檎や和梨を連想させる柔らかな甘さ
+                        </p>
+                        <p class="coffee-card__roast" lang="en">Medium Roast（中浅煎り）</p>
+                    </li>
+                    <li class="coffee-card" id="coffee-guatemala">
+                        <p class="coffee-card__origin">Guatemala</p>
+                        <img src="./images/guatemala.png" width="120" height="120" alt="">
+                        <h4>グアテマラ アンティグア<br>ラ・フォリー農園 フリーウォッシュド</h4>
+                        <p lang="en">Guatemala Antigua Finca La Folia Fully Washed</p>
+                        <p>
+                        柑橘系のような爽やかな酸味と<br>
+                        ほのかに林檎のような優しい甘さ<br>
+                        マイルドな苦みと奥行のある爽やかな味わいの<br>
+                        バランスが心地良い
+                        </p>
+                        <p class="coffee-card__roast" lang="en">High Roast（中深煎り）</p>
+                    </li>
+                    <li class="coffee-card" id="coffee-blend">
+                        <p class="coffee-card__origin">RESTART BLEND</p>
+                        <img src="./images/blend.png" width="120" height="120" alt="">
+                        <h4>ニカラグア & ブラジル</h4>
+                        <p lang="en">Nicaragua & Brazil</p>
+                        <p>
+                        ダークチョコレートのような<br>
+                        深みのあるコク<br>
+                        黒蜜のような香ばしい甘さ
+                        </p>
+                        <p class="coffee-card__roast" lang="en">High Roast（中深煎り）</p>
+                    </li>
+                </ul>
             </section>
         </main>
 
         <footer class="site-footer">
             <h3>=== Special Thanks ===</h3>
             <ul>
-                <li><a href="https://www.sotcoffee.com" target="_blank" rel="noopener noreferrer">SÖT COFFEE</a></li>
                 <li><a href="https://www.instagram.com/restart_coffee_roaster/" target="_blank" rel="noopener noreferrer">RESTART COFFEE ROASTER (Instagram)</a></li>
-                <li><a href="https://www.instagram.com/tadaima_coffee/" target="_blank" rel="noopener noreferrer">ただいまコーヒー (Instagram)</a></li>
-                <li><a href="http://www.coffee-senka.com" target="_blank" rel="noopener noreferrer">コーヒー専科 Beans</a></li>
             </ul>
         </footer>
     </body>

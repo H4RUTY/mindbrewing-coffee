@@ -19,9 +19,7 @@ Design tokens
     /* Font sizes: mobile values */
     --font-size-lead: 0.8125rem;
     --font-size-small: 0.8125rem;
-    --font-size-name: 0.875rem;
-    --font-size-price: 1.25rem;
-    --font-size-heading: 1.5rem;
+    --font-size-name: 1rem;
 }
 
 /* Font sizes: larger screens */
@@ -29,9 +27,6 @@ Design tokens
     :root {
         --font-size-lead: 1rem;
         --font-size-small: 0.875rem;
-        --font-size-name: 0.9375rem;
-        --font-size-price: 1.5rem;
-        --font-size-heading: 1.75rem;
     }
 }
 
@@ -93,7 +88,7 @@ Main visual (logo, title, concept, location)
     font-family: var(--font-display);
     font-size: var(--font-size-lead);
     line-height: 2;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.25em;
     text-wrap: balance;
     word-break: auto-phrase;
 }
@@ -122,33 +117,13 @@ Menu
 .menu h2 {
     margin: 5rem 0 2rem;
     font-family: var(--font-display);
-    font-size: var(--font-size-heading);
+    font-size: var(--font-size-name);
     font-weight: 500;
     text-align: center;
 }
 
-/* ----- Price group: one tinted panel per price ----- */
-.price-group {
-    padding: 1rem;
-    background-color: var(--color-tint);
-    border-radius: 24px;
-}
-
-.price-group + .price-group {
-    margin-top: 4rem;
-}
-
-.price-group h3 {
-    margin: 0 0 1rem;
-    font-family: var(--font-display);
-    font-size: var(--font-size-price);
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    text-align: center;
-}
-
-/* Mobile: cards stacked in one column, with clear spacing */
-.price-group ul {
+/* ----- Coffee cards ----- */
+.menu ul {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
@@ -156,9 +131,10 @@ Menu
 
 /* ----- Coffee card ----- */
 .coffee-card {
+    letter-spacing: 0.1em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 0.75rem;
     box-sizing: border-box;
@@ -174,8 +150,8 @@ Menu
 
 .coffee-card img {
     display: block;
-    width: 56px;
-    height: 56px;
+    width:  100px;
+    height: 100px;
     border-radius: 50%;
 }
 
@@ -193,9 +169,16 @@ Menu
     line-height: 1.4;
 }
 
-.coffee-card__roaster {
+.coffee-card .coffee-card__origin {
+    font-family: var(--font-display);
+    font-size: var(--font-size-name);
     font-weight: 700;
     color: var(--color-ink-muted);
+}
+
+.coffee-card .coffee-card__roast {
+    margin-top: 0.25rem;
+    font-weight: 500;
 }
 
 /* English coffee name */
@@ -205,7 +188,7 @@ Menu
 
 /* Tablet and up: place cards side by side */
 @media (min-width: 48rem) {
-    .price-group ul {
+    .menu ul {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
