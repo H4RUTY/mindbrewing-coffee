@@ -101,7 +101,7 @@ Main visual (logo, title, concept, location)
 
 .location {
     margin: var(--section-gap-large) 0 0;
-    font-size: var(--font-size-lead);
+    font-size: var(--font-size-name);
 }
 
 /* ==========================================================
@@ -186,7 +186,7 @@ Menu
     color: var(--color-ink-muted);
 }
 
-/* Tablet and up: place cards side by side */
+/* Tablet and up:h3place cards side by side */
 @media (min-width: 48rem) {
     .menu ul {
         grid-template-columns: repeat(2, minmax(0, 1fr));
