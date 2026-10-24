@@ -9,33 +9,45 @@ Design tokens
     --color-tint: #f1f3f7;
     --color-surface: #fff;
 
-    --font-base: "Zen Kaku Gothic New", sans-serif;
-    --font-display: "Bricolage Grotesque", "Zen Kaku Gothic New", sans-serif;
+    --font-ja: "Zen Kaku Gothic New", sans-serif;
+    --font-en: "Bricolage Grotesque", sans-serif;
+    --letter-spacing-ja: 0.25em;
+    --letter-spacing-ja-body: 0.1em;
+    --letter-spacing-en: -0.04em;
 
     --content-max-width: 52rem;
     --page-gutter: 1rem;
-    --section-gap-large: 3rem;
+    --section-gap: 3rem;
 
-    /* Font sizes: mobile values */
-    --font-size-lead: 0.8125rem;
-    --font-size-small: 0.8125rem;
-    --font-size-name: 1rem;
-}
-
-/* Font sizes: larger screens */
-@media (min-width: 48rem) {
-    :root {
-        --font-size-lead: 1rem;
-        --font-size-small: 0.875rem;
-    }
+    /* Two text sizes. Only the small one changes with the viewport. */
+    --font-size-s: clamp(0.8125rem, 0.77rem + 0.2vw, 0.875rem);
+    --font-size-m: 1rem;
+    --font-size-title: clamp(2.25rem, 1.227rem + 4.09vw, 4.5rem);
 }
 
 /* ==========================================================
 Base
 ========================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Font and letter-spacing follow the language of each element.
+   :where() keeps the specificity at 0, so any class can override these. */
+:where(:lang(ja)) {
+    font-family: var(--font-ja);
+    letter-spacing: var(--letter-spacing-ja);
+}
+
+:where(:lang(en)) {
+    font-family: var(--font-en);
+    letter-spacing: var(--letter-spacing-en);
+}
+
 body {
     margin: 0;
-    font-family: var(--font-base);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.7;
@@ -54,174 +66,155 @@ ul {
     background-color: var(--color-ink);
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
 /* ==========================================================
-Main visual (logo, title, concept, location)
+Site header (logo, title, concept, location)
 ========================================================== */
 .site-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
     padding: 2rem var(--page-gutter) 0;
     text-align: center;
 }
 
-.site-header img {
-    display: block;
+.site-logo {
     width: 5rem;
     height: auto;
 }
 
-.site-header h1 {
-    color: var(--color-brand);
+.site-title {
     margin: 1.25rem 0 2.5rem;
-    font-family: var(--font-display);
-    font-size: clamp(2.25rem, 1.227rem + 4.09vw, 4.5rem);
+    font-size: var(--font-size-title);
     font-weight: 800;
     line-height: 1.1;
-    letter-spacing: -0.04em;
+    color: var(--color-brand);
 }
 
-.concept {
+.site-concept {
     max-width: 36rem;
     margin: 0;
-    font-family: var(--font-display);
-    font-size: var(--font-size-lead);
+    font-size: var(--font-size-s);
     line-height: 2;
-    letter-spacing: 0.25em;
     text-wrap: balance;
     word-break: auto-phrase;
 }
 
-/* English words only: lighter weight, no extra letter spacing */
-.concept span {
+.site-concept [lang="en"] {
     font-weight: 300;
-    letter-spacing: 0;
 }
 
-.location {
-    margin: var(--section-gap-large) 0 0;
-    font-size: var(--font-size-name);
+.site-location {
+    margin: var(--section-gap) 0 0;
+    font-size: var(--font-size-m);
+    font-weight: 700;
 }
 
 /* ==========================================================
 Menu
 ========================================================== */
 .menu {
-    box-sizing: border-box;
     max-width: var(--content-max-width);
-    margin: var(--section-gap-large) auto 0;
+    margin: var(--section-gap) auto 0;
     padding: 0 var(--page-gutter) 3rem;
 }
 
-.menu h2 {
-    margin: 5rem 0 2rem;
-    font-family: var(--font-display);
-    font-size: var(--font-size-name);
-    font-weight: 500;
-    text-align: center;
-}
-
-/* ----- Coffee cards ----- */
-.menu ul {
+/* 1 column on phones, 2 columns when there is enough room.
+   No media query is needed. */
+.coffee-list {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
     gap: 1rem;
 }
 
-/* ----- Coffee card ----- */
 .coffee-card {
-    letter-spacing: 0.1em;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     gap: 0.75rem;
-    box-sizing: border-box;
     justify-self: center;
     width: 100%;
     max-width: 24rem;
     padding: 2rem 1.25rem;
+    font-size: var(--font-size-s);
+    line-height: 1.5;
     text-align: center;
+    text-wrap: balance;
+    word-break: auto-phrase;
     background-color: var(--color-surface);
     border: 1px solid var(--color-border);
     border-radius: 16px;
 }
 
-.coffee-card img {
-    display: block;
-    width:  100px;
+.coffee-card > * {
+    margin: 0;
+}
+
+.coffee-card__image {
+    width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-.coffee-card h4 {
-    margin: 0;
-    font-size: var(--font-size-name);
-    font-weight: 500;
-    line-height: 1.5;
-    text-wrap: balance;
-}
-
-.coffee-card p {
-    margin: 0;
-    font-size: var(--font-size-small);
-    line-height: 1.4;
-}
-
-.coffee-card .coffee-card__origin {
-    font-family: var(--font-display);
-    font-size: var(--font-size-name);
+.coffee-card__origin {
+    font-size: var(--font-size-m);
     font-weight: 700;
+}
+
+.coffee-card__name {
+    font-size: var(--font-size-m);
+    font-weight: 500;
+}
+
+.coffee-card__origin,
+.coffee-card__name-en {
     color: var(--color-ink-muted);
 }
 
-.coffee-card .coffee-card__roast {
+.coffee-card__roast {
     margin-top: 0.25rem;
     font-weight: 500;
 }
 
-/* English coffee name */
-.coffee-card p[lang="en"] {
-    color: var(--color-ink-muted);
-}
-
-/* Tablet and up:h3place cards side by side */
-@media (min-width: 48rem) {
-    .menu ul {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+.coffee-card__description {
+    font-size: var(--font-size-s);
+    letter-spacing: var(--letter-spacing-ja-body);
 }
 
 /* ==========================================================
-Footer (links to roasters)
+Site footer
 ========================================================== */
 .site-footer {
     margin-top: 4rem;
-    padding: 1rem var(--page-gutter) 3rem var(--page-gutter);
-    font-size: var(--font-size-small);
+    padding: 1rem var(--page-gutter) 3rem;
+    font-size: var(--font-size-s);
     text-align: center;
     background-color: var(--color-tint);
 }
 
-/* Mobile: one link per line */
-.site-footer ul {
+.site-footer__title {
+    margin: 1rem 0;
+    font-size: var(--font-size-m);
+    font-weight: 700;
+}
+
+.site-footer__links {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 0.75rem 2rem;
 }
 
-.site-footer a {
+.site-footer__links a {
     color: inherit;
     text-underline-offset: 0.25em;
-}
-
-/* Tablet and up: links in a row (wrap if needed) */
-@media (min-width: 48rem) {
-    .site-footer ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
 }

@@ -17,76 +17,76 @@
     </head>
     <body>
         <header class="site-header">
-            <img src="./images/logo.svg" alt="Mind-brewing Coffee ロゴ">
-            <h1 lang="en">MIND-BREWING<br>COFFEE</h1>
-            <p class="concept">
+            <img class="site-logo" src="./images/logo.svg" alt="Mind-brewing Coffee ロゴ">
+            <h1 class="site-title" lang="en">MIND-BREWING<br>COFFEE</h1>
+            <p class="site-concept">
             　<span lang="en">mind-blowing</span>（衝撃的な）と、<span lang="en">brewing</span>（コーヒーの抽出）を合わせた店名。本物のコーヒーを初めて飲んだ、あのときの衝動を、あなたにも。
             </p>
-            <h3 class="location">
-            場所: グラウンド-5
-            </h3>
+            <p class="site-location">場所: グラウンド-5</p>
         </header>
 
         <main>
             <section class="menu" aria-labelledby="menu-title">
-                <ul>
+                <h2 id="menu-title" class="visually-hidden" lang="en">Menu</h2>
+
+                <ul class="coffee-list">
                     <li class="coffee-card" id="coffee-ethiopia">
-                        <p class="coffee-card__origin">Ethiopia</p>
-                        <img src="./images/ethiopia.png" width="120" height="120" alt="">
-                        <h4>エチオピア ゴゴグ ウォッシュト</h4>
-                        <p lang="en">Ethiopia Gogogu Washed</p>
-                        <p>
+                        <p class="coffee-card__origin" lang="en">Ethiopia</p>
+                        <img class="coffee-card__image" src="./images/ethiopia.png" width="100" height="100" alt="">
+                        <h3 class="coffee-card__name">エチオピア ゴゴグ ウォッシュト</h3>
+                        <p class="coffee-card__name-en" lang="en">Ethiopia Gogogu Washed</p>
+                        <p class="coffee-card__description">
                         シトラス系や白ブドウのような爽やかな酸味<br>
                         サトウキビのような甘い余韻が続いていく<br>
                         エチオピアらしい繊細さと透明感が楽しめる
                         </p>
-                        <p class="coffee-card__roast" lang="en">Cinnamon Roast（浅煎り）</p>
+                        <p class="coffee-card__roast"><span lang="en">Cinnamon Roast</span>（浅煎り）</p>
                     </li>
                     <li class="coffee-card" id="coffee-panama">
-                        <p class="coffee-card__origin">Panama</p>
-                        <img src="./images/panama.png" width="120" height="120" alt="">
-                        <h4>パナマ ラ エスメラルダ ダイヤモンドマウンテン<br>カトゥアイ フリーウォッシュド</h4>
-                        <p lang="en">Panama La Esmeralda Diamond Mountain Catuai Fully Washed</p>
-                        <p>
+                        <p class="coffee-card__origin" lang="en">Panama</p>
+                        <img class="coffee-card__image" src="./images/panama.png" width="100" height="100" alt="">
+                        <h3 class="coffee-card__name">パナマ ラ エスメラルダ ダイヤモンドマウンテン<br>カトゥアイ フリーウォッシュド</h3>
+                        <p class="coffee-card__name-en" lang="en">Panama La Esmeralda Diamond Mountain Catuai Fully Washed</p>
+                        <p class="coffee-card__description">
                         紅茶のような上品さと蜂蜜の円やかな甘さ<br>
                         シトラス系の爽やかで軽やかな風味と<br>
                         林檎や和梨を連想させる柔らかな甘さ
                         </p>
-                        <p class="coffee-card__roast" lang="en">Medium Roast（中浅煎り）</p>
+                        <p class="coffee-card__roast"><span lang="en">Medium Roast</span>（中浅煎り）</p>
                     </li>
                     <li class="coffee-card" id="coffee-guatemala">
-                        <p class="coffee-card__origin">Guatemala</p>
-                        <img src="./images/guatemala.png" width="120" height="120" alt="">
-                        <h4>グアテマラ アンティグア<br>ラ・フォリー農園 フリーウォッシュド</h4>
-                        <p lang="en">Guatemala Antigua Finca La Folia Fully Washed</p>
-                        <p>
+                        <p class="coffee-card__origin" lang="en">Guatemala</p>
+                        <img class="coffee-card__image" src="./images/guatemala.png" width="100" height="100" alt="">
+                        <h3 class="coffee-card__name">グアテマラ アンティグア<br>ラ・フォリー農園 フリーウォッシュド</h3>
+                        <p class="coffee-card__name-en" lang="en">Guatemala Antigua Finca La Folia Fully Washed</p>
+                        <p class="coffee-card__description">
                         柑橘系のような爽やかな酸味と<br>
                         ほのかに林檎のような優しい甘さ<br>
                         マイルドな苦みと奥行のある爽やかな味わいの<br>
                         バランスが心地良い
                         </p>
-                        <p class="coffee-card__roast" lang="en">High Roast（中深煎り）</p>
+                        <p class="coffee-card__roast"><span lang="en">High Roast</span>（中深煎り）</p>
                     </li>
                     <li class="coffee-card" id="coffee-blend">
-                        <p class="coffee-card__origin">RESTART BLEND</p>
-                        <img src="./images/blend.png" width="120" height="120" alt="">
-                        <h4>ニカラグア & ブラジル</h4>
-                        <p lang="en">Nicaragua & Brazil</p>
-                        <p>
+                        <p class="coffee-card__origin" lang="en">RESTART BLEND</p>
+                        <img class="coffee-card__image" src="./images/blend.png" width="100" height="100" alt="">
+                        <h3 class="coffee-card__name">ニカラグア &amp; ブラジル</h3>
+                        <p class="coffee-card__name-en" lang="en">Nicaragua &amp; Brazil</p>
+                        <p class="coffee-card__description">
                         ダークチョコレートのような<br>
                         深みのあるコク<br>
                         黒蜜のような香ばしい甘さ
                         </p>
-                        <p class="coffee-card__roast" lang="en">High Roast（中深煎り）</p>
+                        <p class="coffee-card__roast"><span lang="en">High Roast</span>（中深煎り）</p>
                     </li>
                 </ul>
             </section>
         </main>
 
         <footer class="site-footer">
-            <h3>=== Special Thanks ===</h3>
-            <ul>
-                <li><a href="https://www.instagram.com/restart_coffee_roaster/" target="_blank" rel="noopener noreferrer">RESTART COFFEE ROASTER (Instagram)</a></li>
+            <h2 class="site-footer__title" lang="en">=== Special Thanks ===</h2>
+            <ul class="site-footer__links">
+                <li><a href="https://www.instagram.com/restart_coffee_roaster/" target="_blank" rel="noopener noreferrer" lang="en">RESTART COFFEE ROASTER (Instagram)</a></li>
             </ul>
         </footer>
     </body>
